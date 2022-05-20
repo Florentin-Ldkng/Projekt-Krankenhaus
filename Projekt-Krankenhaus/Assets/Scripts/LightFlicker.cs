@@ -33,7 +33,7 @@ public class LightFlicker : MonoBehaviour
                     foreach (var light in lights)
                     {
                         light.enabled = true;
-                        //light.color = LightSupportClass.LampColor; Change Color of light for later
+                        //light.color = LightSupportClass.LampColor; //Change Color of light for later
                     }
                     lightoff = true;
                     localOffTime = Random.Range(0f, LightSupportClass.OnTime);
@@ -47,6 +47,7 @@ public class LightFlicker : MonoBehaviour
             foreach (var light in lights)
             {
                 light.enabled = false;
+                localOffTime = Random.Range(0f, LightSupportClass.OnTime);
             }
         }
     }

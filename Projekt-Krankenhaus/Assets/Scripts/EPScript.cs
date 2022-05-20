@@ -10,7 +10,7 @@ public class EPScript : MonoBehaviour
     {
         if(alreadyPressed == false)
         {
-            LightSupportClass.FlipSwitch();
+            GameManager.FlipSwitch();
             alreadyPressed = true;
             bSource.Play();
             aSource.enabled = false;

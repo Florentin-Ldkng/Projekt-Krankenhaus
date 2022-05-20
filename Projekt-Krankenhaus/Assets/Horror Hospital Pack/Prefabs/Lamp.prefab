@@ -42,8 +42,8 @@ Light:
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
-  m_Color: {r: 0.9264706, g: 0.96957403, b: 1, a: 1}
-  m_Intensity: 2.8
+  m_Color: {r: 1, g: 0.9481132, b: 0.9501181, a: 1}
+  m_Intensity: 5
   m_Range: 9.111757
   m_SpotAngle: 164
   m_InnerSpotAngle: 157.8725
@@ -104,6 +104,7 @@ GameObject:
   - component: {fileID: 428016}
   - component: {fileID: 3348786}
   - component: {fileID: 2309692}
+  - component: {fileID: 2038767995}
   m_Layer: 0
   m_Name: Lamp
   m_TagString: Untagged
@@ -118,7 +119,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 179298}
-  m_LocalRotation: {x: 0.00000008146034, y: 0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.703, y: 3.584035, z: 0.03}
   m_LocalScale: {x: 0.39396062, y: 0.39396062, z: 0.17698109}
   m_Children:
@@ -176,6 +177,21 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &2038767995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 179298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18d5e2f1dc2ba8e4aba6e62e751ac2be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lights:
+  - {fileID: 10854756}
+  - {fileID: 10822452}
 --- !u!1 &186052
 GameObject:
   m_ObjectHideFlags: 0
@@ -218,8 +234,8 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 0.9264706, g: 0.96957403, b: 1, a: 1}
-  m_Intensity: 0.24
+  m_Color: {r: 1, g: 0.9481132, b: 0.9501181, a: 1}
+  m_Intensity: 1
   m_Range: 9.111757
   m_SpotAngle: 164
   m_InnerSpotAngle: 157.8725
