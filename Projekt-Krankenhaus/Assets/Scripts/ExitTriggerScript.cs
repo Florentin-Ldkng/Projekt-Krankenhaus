@@ -20,7 +20,7 @@ public class ExitTriggerScript : MonoBehaviour
                     Door.SetExitLights(false);
                     Door.FakeDoor = 2;
                     TempOn.SetActive(true);
-                    TempOff.SetActive(false);
+                    Destroy(TempOff);
                     GameManager.FlipSwitch();
                     break;
             }
