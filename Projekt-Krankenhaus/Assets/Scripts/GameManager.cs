@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     private void Awake()
     {
+        QualitySettings.vSyncCount = 0;
+        Application.targetFrameRate = 120;
         PrepareTriggers();
         ChaseMusic = gameObject.GetComponent<AudioSource>();
     }

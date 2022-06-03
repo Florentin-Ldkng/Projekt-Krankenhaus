@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 currentMouseDelta = Vector2.zero;
     private Vector2 ccurrentMouseDeltaVelocity = Vector2.zero;
     private Vector2 targetDir = Vector2.zero;
+    private RaycastHit hit;
 
     void Start()
     {
@@ -67,12 +68,11 @@ public class PlayerController : MonoBehaviour
     }
     private void UpdateInteractions()
     {
-        if(Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            RaycastHit hit;
-            if(Physics.Raycast(playerCamera.transform.position, transform.TransformDirection(Vector3.forward), out hit, 1.5f))
+            if (Physics.Raycast(playerCamera.transform.position, transform.TransformDirection(Vector3.forward), out hit, 1.5f))
             {
-                switch(hit.collider.gameObject.tag)
+                switch (hit.collider.gameObject.tag)
                 {
                     case "Panel":
                         hit.collider.GetComponent<EPScript>().UseElectroPanel();
@@ -83,5 +83,6 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
+
     }
 }
