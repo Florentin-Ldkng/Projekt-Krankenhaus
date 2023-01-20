@@ -38,6 +38,7 @@ public class PlayerController : MonoBehaviour
         sManager.PlayStepSound(targetDir);
     }
 
+
     private void UpdateMouseLook()
     {
         Vector2 targetmouseDelta = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
