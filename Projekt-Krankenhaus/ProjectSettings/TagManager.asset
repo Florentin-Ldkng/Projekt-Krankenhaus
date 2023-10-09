@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Panel
   - Door
+  - DoorLoad1
   layers:
   - Default
   - TransparentFX

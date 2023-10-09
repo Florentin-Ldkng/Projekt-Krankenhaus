@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] Transform playerCamera = null;
+    public GameObject gameManager = null;
     private CharacterController controller = null;
     private SoundManager sManager = null;
 
@@ -32,6 +33,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+       
         UpdateMouseLook();
         UpdateMovement();
         UpdateInteractions();
@@ -80,6 +82,9 @@ public class PlayerController : MonoBehaviour
                         break;
                     case "Door":
                         hit.collider.GetComponent<DoorScript>().OpenDoor();
+                        break;
+                    case "DoorLoad1":
+                        gameManager.GetComponent<TransitionScript>().Transition("DoorLoad1");
                         break;
                 }
             }
