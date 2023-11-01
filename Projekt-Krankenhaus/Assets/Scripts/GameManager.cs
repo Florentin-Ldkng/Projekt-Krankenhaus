@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         QualitySettings.vSyncCount = 0;
-        Application.targetFrameRate = 120;
+        Application.targetFrameRate = 165;
         PrepareTriggers();
         ChaseMusic = gameObject.GetComponent<AudioSource>();
     }
