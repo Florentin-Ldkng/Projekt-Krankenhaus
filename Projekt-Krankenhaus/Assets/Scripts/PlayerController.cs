@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 ccurrentMouseDeltaVelocity = Vector2.zero;
     private Vector2 targetDir = Vector2.zero;
     private RaycastHit hit;
+    public bool Movable = true;
 
     void Start()
     {
@@ -33,13 +34,21 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-       
-        UpdateMouseLook();
-        UpdateMovement();
-        UpdateInteractions();
-        sManager.PlayStepSound(targetDir);
+        if (Movable == true)
+        {
+            UpdateMouseLook();
+            UpdateMovement();
+            UpdateInteractions();
+            sManager.PlayStepSound(targetDir);
+        }
+        else
+        {
+            if (Input.GetKey(KeyCode.Escape))
+            {
+                Application.Quit();
+            }
+        }
     }
-
 
     private void UpdateMouseLook()
     {

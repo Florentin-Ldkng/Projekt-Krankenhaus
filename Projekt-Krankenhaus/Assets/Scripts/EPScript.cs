@@ -5,6 +5,7 @@ using UnityEngine;
 public class EPScript : MonoBehaviour
 {
     [SerializeField] private AudioSource aSource,bSource;
+    [SerializeField] private ParticleSystem particles;
     private bool alreadyPressed = false;
     public void UseElectroPanel()
     {
@@ -14,6 +15,7 @@ public class EPScript : MonoBehaviour
             alreadyPressed = true;
             bSource.Play();
             aSource.enabled = false;
+            particles.Play();
         }
     }
 }

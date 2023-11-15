@@ -12,7 +12,7 @@ public class LightFlicker : MonoBehaviour
     private void Start()
     {
     }
-    void Update()
+    void FixedUpdate()
     {
         if(LightSupportClass.IsOff == false)
         {
@@ -49,6 +49,15 @@ public class LightFlicker : MonoBehaviour
                 light.enabled = false;
                 localOffTime = Random.Range(0f, LightSupportClass.OnTime);
             }
+        }
+    }
+
+    public void SetOn()
+    {
+        foreach (var light in lights)
+        {
+            light.enabled = true;
+            localOffTime = 0;
         }
     }
 }
