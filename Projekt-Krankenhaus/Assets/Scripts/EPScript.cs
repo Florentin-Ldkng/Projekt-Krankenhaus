@@ -6,6 +6,8 @@ public class EPScript : MonoBehaviour
 {
     [SerializeField] private AudioSource aSource,bSource;
     [SerializeField] private ParticleSystem particles;
+    [SerializeField] private GameObject doctor = null;
+    
     private bool alreadyPressed = false;
     public void UseElectroPanel()
     {
@@ -16,6 +18,11 @@ public class EPScript : MonoBehaviour
             bSource.Play();
             aSource.enabled = false;
             particles.Play();
+
+            if (doctor != null)
+            {
+                doctor.SetActive(true);
+            }
         }
     }
 }

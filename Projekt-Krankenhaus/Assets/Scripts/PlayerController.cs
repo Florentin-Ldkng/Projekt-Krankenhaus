@@ -5,15 +5,16 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] Transform playerCamera = null;
+    [SerializeField] UiScript uiScript = null;
     public GameObject gameManager = null;
     private CharacterController controller = null;
     private SoundManager sManager = null;
-
+    
     private float moveSmoothTime = .1f;
     private float mouseSmoothTime = .03f;
     private float mouseSensitivity = 2f;
     private float cameraPitch = 0.0f;
-    private float walkSpeed = 4f;
+    public float walkSpeed = 4f;
     private float gravity = -13f;
     private float velocityY = 0.0f;
     private Vector2 currentDir = Vector2.zero;
@@ -23,6 +24,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 targetDir = Vector2.zero;
     private RaycastHit hit;
     public bool Movable = true;
+    public float timeModifier = 0.7f;
 
     void Start()
     {
@@ -39,15 +41,10 @@ public class PlayerController : MonoBehaviour
             UpdateMouseLook();
             UpdateMovement();
             UpdateInteractions();
-            sManager.PlayStepSound(targetDir);
+            sManager.PlayStepSound(targetDir,timeModifier);
         }
-        else
-        {
-            if (Input.GetKey(KeyCode.Escape))
-            {
-                Application.Quit();
-            }
-        }
+
+        MetaInteraction();
     }
 
     private void UpdateMouseLook()
@@ -99,5 +96,20 @@ public class PlayerController : MonoBehaviour
             }
         }
 
+    }
+
+    private void MetaInteraction()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (gameManager.GetComponent<GameManager>().GameOver == true)
+            {
+                Application.Quit();
+            }
+            else
+            {
+                uiScript.SwitchUI();
+            }
+        }
     }
 }

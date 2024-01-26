@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class FakeKI : MonoBehaviour
 {
+    [SerializeField] private GameManager gameManager;
     [SerializeField] private GameObject player;
     [SerializeField] private Animator animator;
     [SerializeField] private AudioSource aSource;
@@ -43,5 +44,6 @@ public class FakeKI : MonoBehaviour
         aSource.PlayOneShot(Scream);
         yield return new WaitForSeconds(0.1f);
         blankImage.SetActive(true);
+        gameManager.GameOver = true;
     }
 }

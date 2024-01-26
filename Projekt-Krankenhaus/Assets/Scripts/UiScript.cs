@@ -5,25 +5,37 @@ using UnityEngine.UI;
 
 public class UiScript : MonoBehaviour
 {
-    [SerializeField] Image Crosshair;
-    [SerializeField] Sprite Standart, Grab;
-    private byte index = 0;
+    private bool uiOpen = false;
+    //[SerializeField] Image Crosshair;
+    //[SerializeField] Sprite Standart, Grab;
+    //private byte index = 0;
+    //
+    //public void ChangeCrosshair(byte i)
+    //{
+    //    if(i != index)
+    //    {
+    //        switch (i)
+    //        {
+    //            case 0:
+    //                Crosshair.sprite = Standart;
+    //                index = 0;
+    //                break;
+    //            case 1:
+    //                Crosshair.sprite = Grab;
+    //                index = 1;
+    //                break;
+    //        }
+    //    }        
+    //}
 
-    public void ChangeCrosshair(byte i)
+    public void SwitchUI()
     {
-        if(i != index)
+        switch (uiOpen)
         {
-            switch (i)
-            {
-                case 0:
-                    Crosshair.sprite = Standart;
-                    index = 0;
-                    break;
-                case 1:
-                    Crosshair.sprite = Grab;
-                    index = 1;
-                    break;
-            }
-        }        
+            case true:
+                break;
+            case false:
+                break;
+        }
     }
 }

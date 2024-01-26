@@ -7,24 +7,19 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private static GameObject ExitTrigger, ExitCloseTrigger;
     [SerializeField] private GameObject Triggers;
+    [SerializeField] private static PlayerController player;
     static AudioSource ChaseMusic;
     public static int switchesPressed = 0;
+    public bool GameOver = false; 
 
     // Start is called before the first frame update
     private void Awake()
     {
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         QualitySettings.vSyncCount = 0;
         Application.targetFrameRate = 165;
         PrepareTriggers();
         ChaseMusic = gameObject.GetComponent<AudioSource>();
-    }
-    void Start()
-    {
-        
-    }
-    // Update is called once per frame
-    void Update()
-    {
     }
     public static void FlipSwitch()
     {
@@ -52,6 +47,8 @@ public class GameManager : MonoBehaviour
             case 4:
                 LightSupportClass.IsOff = false;
                 ChaseMusic.Play();
+                player.walkSpeed = 4.5f;
+                player.timeModifier = 0.5f;
                 break;
         }
     }

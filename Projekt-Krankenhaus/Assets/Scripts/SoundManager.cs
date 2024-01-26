@@ -13,9 +13,9 @@ public class SoundManager : MonoBehaviour
         time += Time.deltaTime;
     }
 
-    public void PlayStepSound(Vector2 Direction)
+    public void PlayStepSound(Vector2 Direction, float timeModifier)
     {
-        if(Direction.magnitude > 0 && time > .7f)
+        if(Direction.magnitude > 0 && time > timeModifier)
         {
             time = 0;
             aSource.PlayOneShot(TileSteps[Random.Range(0,8)]);
